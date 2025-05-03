@@ -4,7 +4,7 @@ Exercise 1.3: Define a procedure that takes three numbers as arguments and retur
 (define (sum-square-two-larger a b c)
       (define (sum-square x y)
         (+ (* x x) (* y y)))
-      (cond ((and (< a b) (< a c) (sum-square b c)))
-            ((and (< b a) (< b c) (sum-square a c)))
-            ((and (< c a) (< c b) (sum-square a b)))))
+      (cond ((and (<= a b) (<= a c)) (sum-square b c))
+            ((and (<= b a) (<= b c)) (sum-square a c))
+            ((and (<= c a) (<= c b)) (sum-square a b))))
 ```
